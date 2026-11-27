@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Praew</title>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<style>
+body {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  background: #f3f0e8;
+  font-family: Arial, sans-serif;
+}
+#player {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  margin: auto;
+}
+ruffle-player {
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+<h2>Praew</h2>
+<div id="player"></div>
+<script>
+window.RufflePlayer = window.RufflePlayer || {};
+window.addEventListener("load", function() {
+  const ruffle = window.RufflePlayer.newest();
+  const player = ruffle.createPlayer();
+  document.getElementById("player").appendChild(player);
+  player.load("praew.swf");
+});
+</script>
+</body>
+</html>
